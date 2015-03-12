@@ -6,7 +6,6 @@ var quiz = [{
         "Princess Leia",
         "Han Solo"],
         "correct": "Princess Leia",
-        "explanation": "",
 }, {
     "question": "What was the original name of 'Return of the Jedi'?",
         "choices": [
@@ -15,7 +14,6 @@ var quiz = [{
         "Return of the jedi",
         "Revenge of the jedi"],
         "correct": "Revenge of the jedi",
-        "explanation": "",
 }, {
     "question": "What is Count Dooku's Sith name?",
         "choices": [
@@ -24,7 +22,6 @@ var quiz = [{
         "Darth Sidious",
         "Darth Maul"],
         "correct": "Darth Tyranus",
-        "explanation": "",
 }, {
     "question": "'Adventure. Excitement. A Jedi craves not these things.' Who said it?",
         "choices": [
@@ -33,7 +30,6 @@ var quiz = [{
         "Obi-wan Kenobi",
         "Luke skywalker"],
         "correct": "Yoda",
-        "explanation": "",
 }, {
     "question": "What special concession did George Lucas make to Samuel L. Jackson when he joined the 'Star Wars' prequels?",
         "choices": [
@@ -42,37 +38,32 @@ var quiz = [{
         "Lucas gave Jackson the only curse word in the series",
         "Lucas gave Jackson a purple lightsaber"],
         "correct": "Lucas gave Jackson a purple lightsaber",
-        "explanation": "",
 }
 
 ];
 var questionIndex = 0;
-var z = document.getElementById("quiz");
 var score = 0;         
 var quizObject = quiz[questionIndex];
 
 
-createQueAnsWindow(quizObject);
-   
+createQueAnsWindow(quizObject);   
 
 
-
-//question function will take one object question and display the question with choices
+//Question function will take one object question and display the question with choices
 function createQueAnsWindow(que) {
-    //console.log(que);
-    var y = document.createElement("div");
-    y.setAttribute("id", "q" + questionIndex);
-     document.getElementById("quiz").appendChild(y);
+    var questionNumer = document.createElement("div");
+    questionNumer.setAttribute("id", "q" + questionIndex);
+     document.getElementById("quiz").appendChild(questionNumer);
 
     
-    var x = document.createElement("p");
-    y.appendChild(x);
+    var questionText = document.createElement("p");
+    questionNumer.appendChild(questionText);
     qst = quizObject.question;
-    x.innerHTML = qst;
+    questionText.innerHTML = qst;
     
-    var a = document.createElement("div");
-    a.setAttribute("id", "answer");
-    y.appendChild(a);
+    var answerText = document.createElement("div");
+    answerText.setAttribute("id", "answer");
+    questionNumer.appendChild(answerText);
     
     for (var j = 0; j < que.choices.length; j++) {
         var input = document.createElement("INPUT");
@@ -86,9 +77,9 @@ function createQueAnsWindow(que) {
         l.setAttribute("for", "ans" + j);
         l.innerHTML = ans;
 
-        a.appendChild(l);
-        a.appendChild(input);
-        a.appendChild(br);
+        answerText.appendChild(l);
+        answerText.appendChild(input);
+        answerText.appendChild(br);
     }
     
 };
@@ -99,11 +90,9 @@ var validateAns = function () {
     var correct = quiz[questionIndex].correct;
     var labels = f.getElementsByTagName('label');
     
-    //   console.log(labels);
     for (var i = 0; i < labels.length; i++) {
         var forId = labels[i].getAttribute("for");
         var checkBox = document.getElementById(forId);
-      //  console.log(i);
         
         if (checkBox.checked) {
             if (labels[i].innerHTML == correct) {
