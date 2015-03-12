@@ -1,4 +1,4 @@
-# Star Wars Quiz
+## Star Wars Quiz
 **Author:** Maria Cristina Di Termine
 
 **Category:** Javascript and HTML/CSS
