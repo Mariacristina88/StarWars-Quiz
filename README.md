@@ -1,9 +1,9 @@
 ## Star Wars Quiz
-**Author:** Maria Cristina Di Termine
+###Author: Maria Cristina Di Termine
 
-**Category:** Javascript and HTML/CSS
+###Category: Javascript and HTML/CSS
 
-**Date:** Genuary 2015
+###Date: Genuary 2015
 ----------------------------------------------------------------------
 
 **This is a little quiz made with javascript using a little bit HTML and CSS.**
